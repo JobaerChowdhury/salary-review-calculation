@@ -1,12 +1,13 @@
 package com.cefalo.school.composite;
 
+import com.cefalo.school.calculator.ReviewCalculator;
 import com.cefalo.school.calculator.Score;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Manager implements Employee{
+public class CompositeEmployee implements Employee {
 
     private int id;
     private String name;
@@ -14,7 +15,7 @@ public class Manager implements Employee{
     private double salary;
     private Score score;
 
-    public Manager(int id, String name, Role role, double salary, Score score){
+    public CompositeEmployee(int id, String name, Role role, double salary, Score score) {
         this.id = id;
         this.name = name;
         this.role = role;
@@ -23,12 +24,28 @@ public class Manager implements Employee{
     }
 
     List<Employee> employees = new ArrayList<Employee>();
+
     public void add(Employee employee) {
         employees.add(employee);
     }
 
     public Employee getChild(int i) {
         return employees.get(i);
+    }
+
+    @Override
+    public double calculateSalary() {
+        ReviewCalculator reviewCalculator = new ReviewCalculator(salary, score, role.getImpact());
+        return reviewCalculator.calculate();
+    }
+
+    @Override
+    public double calculateGroupSalary() {
+        double sum = calculateSalary();
+        for (Employee employee : employees) {
+            sum += employee.calculateGroupSalary();
+        }
+        return sum;
     }
 
     public String getName() {
@@ -54,19 +71,9 @@ public class Manager implements Employee{
         return score;
     }
 
-    public void print() {
-        System.out.println(this);
-
-        Iterator<Employee> employeeIterator = employees.iterator();
-        while(employeeIterator.hasNext()){
-            Employee employee = employeeIterator.next();
-            employee.print();
-        }
-    }
-
     @Override
     public String toString() {
-        return "Manager{" +
+        return "CompositeEmployee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", role=" + role +

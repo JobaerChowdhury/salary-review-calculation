@@ -9,5 +9,7 @@ public interface Employee extends EmployeeInfo {
 
     public Employee getChild(int i);
 
-    public void print();
+    public double calculateSalary();
+
+    public double calculateGroupSalary();
 }
