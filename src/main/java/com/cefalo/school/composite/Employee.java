@@ -1,6 +1,6 @@
 package com.cefalo.school.composite;
 
-import com.cefalo.school.calculator.Score;
+import com.cefalo.school.calculator.EmployeeInfo;
 
 public interface Employee extends EmployeeInfo {
     public void add(Employee employee);

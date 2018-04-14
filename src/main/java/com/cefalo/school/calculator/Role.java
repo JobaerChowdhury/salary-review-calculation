@@ -1,4 +1,4 @@
-package com.cefalo.school.composite;
+package com.cefalo.school.calculator;
 
 import com.cefalo.school.calculator.Impact;
 

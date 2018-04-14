@@ -1,5 +1,6 @@
-package com.cefalo.school.composite;
+package com.cefalo.school.calculator;
 
+import com.cefalo.school.calculator.Role;
 import com.cefalo.school.calculator.Score;
 
 public interface EmployeeInfo {

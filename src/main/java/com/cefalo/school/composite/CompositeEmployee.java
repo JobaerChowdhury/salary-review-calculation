@@ -1,10 +1,10 @@
 package com.cefalo.school.composite;
 
 import com.cefalo.school.calculator.ReviewCalculator;
+import com.cefalo.school.calculator.Role;
 import com.cefalo.school.calculator.Score;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class CompositeEmployee implements Employee {

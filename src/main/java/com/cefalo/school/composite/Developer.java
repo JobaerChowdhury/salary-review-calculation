@@ -1,6 +1,7 @@
 package com.cefalo.school.composite;
 
 import com.cefalo.school.calculator.ReviewCalculator;
+import com.cefalo.school.calculator.Role;
 import com.cefalo.school.calculator.Score;
 
 public class Developer implements Employee {
