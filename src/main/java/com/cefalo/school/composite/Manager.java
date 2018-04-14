@@ -6,11 +6,15 @@ import java.util.List;
 
 public class Manager implements Employee{
 
+    private int id;
     private String name;
+    private Role role;
     private double salary;
 
-    public Manager(String name,double salary){
+    public Manager(int id, String name, Role role, double salary){
+        this.id = id;
         this.name = name;
+        this.role = role;
         this.salary = salary;
     }
 
@@ -31,11 +35,18 @@ public class Manager implements Employee{
         return salary;
     }
 
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public Role getRole() {
+        return role;
+    }
+
     public void print() {
-        System.out.println("-------------");
-        System.out.println("Name ="+getName());
-        System.out.println("Salary ="+getSalary());
-        System.out.println("-------------");
+        System.out.println(this);
 
         Iterator<Employee> employeeIterator = employees.iterator();
         while(employeeIterator.hasNext()){
@@ -44,8 +55,17 @@ public class Manager implements Employee{
         }
     }
 
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", role=" + role +
+                ", salary=" + salary +
+                '}';
+    }
+
     public void remove(Employee employee) {
         employees.remove(employee);
     }
-
 }

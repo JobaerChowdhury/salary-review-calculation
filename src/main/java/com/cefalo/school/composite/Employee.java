@@ -11,5 +11,9 @@ public interface Employee {
 
     public double getSalary();
 
+    public int getId();
+
+    public Role getRole();
+
     public void print();
 }
