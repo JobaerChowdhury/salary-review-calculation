@@ -1,5 +1,7 @@
 package com.cefalo.school.composite;
 
+import com.cefalo.school.calculator.Score;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -10,12 +12,14 @@ public class Manager implements Employee{
     private String name;
     private Role role;
     private double salary;
+    private Score score;
 
-    public Manager(int id, String name, Role role, double salary){
+    public Manager(int id, String name, Role role, double salary, Score score){
         this.id = id;
         this.name = name;
         this.role = role;
         this.salary = salary;
+        this.score = score;
     }
 
     List<Employee> employees = new ArrayList<Employee>();
@@ -43,6 +47,11 @@ public class Manager implements Employee{
     @Override
     public Role getRole() {
         return role;
+    }
+
+    @Override
+    public Score getScore() {
+        return score;
     }
 
     public void print() {

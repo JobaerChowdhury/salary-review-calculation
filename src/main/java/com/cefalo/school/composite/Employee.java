@@ -1,19 +1,13 @@
 package com.cefalo.school.composite;
 
-public interface Employee {
+import com.cefalo.school.calculator.Score;
+
+public interface Employee extends EmployeeInfo {
     public void add(Employee employee);
 
     public void remove(Employee employee);
 
     public Employee getChild(int i);
-
-    public String getName();
-
-    public double getSalary();
-
-    public int getId();
-
-    public Role getRole();
 
     public void print();
 }
