@@ -58,4 +58,14 @@ public abstract class AbstractEmployee implements Employee {
                 ", salary=" + salary +
                 '}';
     }
+
+    @Override
+    public void print() {
+        System.out.println(toString());
+    }
+
+    @Override
+    public double flatRaise(double percentage) {
+        return salary * (1.0 + percentage);
+    }
 }

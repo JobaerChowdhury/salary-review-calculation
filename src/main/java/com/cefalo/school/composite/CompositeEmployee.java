@@ -30,7 +30,25 @@ public class CompositeEmployee extends AbstractEmployee {
         return sum;
     }
 
+    @Override
+    public double flatRaise(double percentage) {
+        double sum = super.flatRaise(percentage);
+        for (Employee employee : employees) {
+            sum += employee.flatRaise(percentage);
+        }
+        return sum;
+    }
+
+    @Override
+    public void print() {
+        super.print();
+        for (Employee employee : employees) {
+            employee.print();
+        }
+    }
+
     public void remove(Employee employee) {
+        //todo this is not the correct way, since it may remove an employee with his subordinates, which we don't want
         employees.remove(employee);
     }
 }

@@ -12,4 +12,8 @@ public interface Employee extends EmployeeInfo {
     public double calculateSalary();
 
     public double calculateGroupSalary();
+
+    public void print();
+
+    public double flatRaise(double percentage);
 }

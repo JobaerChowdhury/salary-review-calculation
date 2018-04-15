@@ -55,5 +55,9 @@ public class App {
         double groupSalary = reviewSystem.calculateGroupSalary(cto);
         System.out.printf("groupSalary = %.2f\n", groupSalary);
 
+        double withFlatIncrease = reviewSystem.flatRaise(0.05, cto);
+        System.out.printf("withFlatIncrease = %.2f\n", withFlatIncrease);
+
+        reviewSystem.print(cto);
     }
 }

@@ -48,4 +48,16 @@ public class CefaloReviewSystem implements ReviewSystem {
         Employee storedEmployee = empStore.get(empWithSub.getId());
         return storedEmployee.calculateGroupSalary();
     }
+
+    @Override
+    public void print(EmployeeInfo emp) {
+        Employee employee = empStore.get(emp.getId());
+        employee.print();
+    }
+
+    @Override
+    public double flatRaise(double percentage, EmployeeInfo empInfo) {
+        Employee employee = empStore.get(empInfo.getId());
+        return employee.flatRaise(percentage);
+    }
 }
