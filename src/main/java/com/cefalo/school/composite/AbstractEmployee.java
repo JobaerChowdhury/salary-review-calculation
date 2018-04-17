@@ -60,8 +60,8 @@ public abstract class AbstractEmployee implements Employee {
     }
 
     @Override
-    public void print() {
-        System.out.println(toString());
+    public String print() {
+        return toString();
     }
 
     @Override

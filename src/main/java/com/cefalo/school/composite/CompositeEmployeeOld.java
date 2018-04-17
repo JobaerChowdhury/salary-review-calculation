@@ -5,14 +5,11 @@ import com.cefalo.school.calculator.Score;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
-public class CompositeEmployee extends AbstractEmployee {
+public class CompositeEmployeeOld extends AbstractEmployee {
     List<Employee> employees = new ArrayList<Employee>();
 
-    public CompositeEmployee(int id, String name, Role role, double salary, Score score) {
+    public CompositeEmployeeOld(int id, String name, Role role, double salary, Score score) {
         super(id, name, role, salary, score);
     }
 
@@ -26,29 +23,30 @@ public class CompositeEmployee extends AbstractEmployee {
 
     @Override
     public double calculateGroupSalary() {
-        return fold(this::calculateSalary, Employee::calculateGroupSalary, Double::sum);
+        double sum = calculateSalary();
+        for (Employee employee : employees) {
+            sum += employee.calculateGroupSalary();
+        }
+        return sum;
     }
 
     @Override
     public double flatRaise(double percentage) {
-        return fold(() -> super.flatRaise(percentage), e -> e.flatRaise(percentage), Double::sum);
+        double sum = super.flatRaise(percentage);
+        for (Employee employee : employees) {
+            sum += employee.flatRaise(percentage);
+        }
+        return sum;
     }
 
     @Override
     public String print() {
-        return fold(super::print, Employee::print, (s1, s2) -> s1 + "\n" + s2);
-    }
+        String result = super.print();
 
-    private <T> T fold(
-            Supplier<T> initialValue,
-            Function<Employee, T> iteration,
-            BiFunction<T, T, T> combiner
-    ) {
-        T result = initialValue.get();
-        for (Employee emp : employees) {
-            T val = iteration.apply(emp);
-            result = combiner.apply(result, val);
+        for (Employee employee : employees) {
+            result = result + "\n" + employee.print();
         }
+
         return result;
     }
 

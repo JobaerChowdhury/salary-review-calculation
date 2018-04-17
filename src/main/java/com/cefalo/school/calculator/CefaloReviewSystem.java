@@ -52,7 +52,8 @@ public class CefaloReviewSystem implements ReviewSystem {
     @Override
     public void print(EmployeeInfo emp) {
         Employee employee = empStore.get(emp.getId());
-        employee.print();
+        String print = employee.print();
+        System.out.println(print);
     }
 
     @Override
