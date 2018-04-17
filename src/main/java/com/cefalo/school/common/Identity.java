@@ -1,4 +1,4 @@
-package com.cefalo.school.calculator;
+package com.cefalo.school.common;
 
 /**
  * Created by jobaer on Apr-17-2018.

@@ -1,6 +1,9 @@
 package com.cefalo.school;
 
 import com.cefalo.school.calculator.*;
+import com.cefalo.school.common.EmployeeInfo;
+import com.cefalo.school.common.ReviewSystem;
+import com.cefalo.school.composite.CefaloReviewSystem;
 
 public class App {
 

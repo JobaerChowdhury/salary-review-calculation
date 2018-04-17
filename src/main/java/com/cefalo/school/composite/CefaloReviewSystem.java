@@ -1,6 +1,9 @@
-package com.cefalo.school.calculator;
+package com.cefalo.school.composite;
 
-import com.cefalo.school.composite.*;
+import com.cefalo.school.common.EmployeeInfo;
+import com.cefalo.school.calculator.Role;
+import com.cefalo.school.calculator.Score;
+import com.cefalo.school.common.ReviewSystem;
 
 import java.util.HashMap;
 import java.util.Map;

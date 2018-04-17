@@ -20,4 +20,6 @@ public interface Tree<T> {
                U initialValue,
                Function<T, U> extractor,
                BiFunction<U, U, U> combiner);
+
+    <B> Tree<B> map(Function<T, B> transform);
 }

@@ -1,6 +1,8 @@
 package com.cefalo.school.generic;
 
 import com.cefalo.school.calculator.*;
+import com.cefalo.school.common.EmployeeInfo;
+import com.cefalo.school.common.EmployeeInfoImpl;
 
 public class TestTree {
     public static void main(String[] args) {

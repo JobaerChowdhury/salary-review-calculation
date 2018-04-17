@@ -1,6 +1,6 @@
 package com.cefalo.school.generic;
 
-import com.cefalo.school.calculator.Identity;
+import com.cefalo.school.common.Identity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,6 +52,12 @@ public class CompositeTree<T extends Identity> implements Tree<T> {
         }
 
         return combiner.apply(childResults, currentValue);
+    }
+
+    @Override
+    public <B> Tree<B> map(Function<T, B> transform) {
+        //todo implement
+        throw new RuntimeException("TODO");
     }
 
     @Override

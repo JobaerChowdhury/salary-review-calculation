@@ -1,4 +1,8 @@
-package com.cefalo.school.calculator;
+package com.cefalo.school.common;
+
+import com.cefalo.school.calculator.Role;
+import com.cefalo.school.calculator.Score;
+import com.cefalo.school.common.EmployeeInfo;
 
 /**
  * Created by jobaer on Apr-17-2018.
