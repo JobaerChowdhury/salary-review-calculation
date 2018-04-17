@@ -9,7 +9,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class CompositeEmployee extends AbstractEmployee {
-    List<Employee> employees = new ArrayList<Employee>();
+    private List<Employee> employees = new ArrayList<>();
 
     public CompositeEmployee(int id, String name, Role role, double salary, Score score) {
         super(id, name, role, salary, score);
