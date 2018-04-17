@@ -16,8 +16,8 @@ public class App {
         Score goodScore = new Score(8, 5, 9, 8, 9);
         Score badScore = new Score(5, 5, 5, 5, 6);
 
-//        ReviewSystem reviewSystem = new GenericReviewSystem();
-        ReviewSystem reviewSystem = new CefaloReviewSystem();
+        ReviewSystem reviewSystem = new GenericReviewSystem();
+//        ReviewSystem reviewSystem = new CefaloReviewSystem();
         System.out.println(reviewSystem);
         EmployeeInfo cto = reviewSystem.create(1, "john the cto", Role.CTO, 100000, goodScore);
 

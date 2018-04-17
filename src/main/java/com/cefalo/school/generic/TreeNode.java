@@ -5,13 +5,15 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * Implementation of the Node interface.
+ * <p>
  * Created by jobaer on Apr-17-2018.
  */
 public class TreeNode<T> implements Node<T> {
     private T data;
     private List<Node<T>> children = new ArrayList<>();
 
-    public TreeNode(T data) {
+    TreeNode(T data) {
         this.data = data;
     }
 
