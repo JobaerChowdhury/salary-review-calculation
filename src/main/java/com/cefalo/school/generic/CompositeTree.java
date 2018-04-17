@@ -4,7 +4,9 @@ import com.cefalo.school.calculator.Identity;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * Concrete implementation of the Tree interface.
@@ -32,6 +34,24 @@ public class CompositeTree<T extends Identity> implements Tree<T> {
         for (Node<T> tNode : treeNode.getChildren()) {
             forEach(tNode.getData(), action);
         }
+    }
+
+    @Override
+    public <U> U fold(T node, U initValue, Function<T, U> extractor, BiFunction<U, U, U> combiner) {
+        if (!storage.containsKey(node.getId())) throw new IllegalStateException("Invalid tree state.");
+
+        Node<T> tNode = storage.get(node.getId());
+        U currentValue = extractor.apply(tNode.getData());
+
+        U childResults = initValue;
+        if (!tNode.isLeaf()) {
+            for (Node<T> childNode : tNode.getChildren()) {
+                U intermediateResult = fold(childNode.getData(), initValue, extractor, combiner);
+                childResults = combiner.apply(childResults, intermediateResult);
+            }
+        }
+
+        return combiner.apply(childResults, currentValue);
     }
 
     @Override

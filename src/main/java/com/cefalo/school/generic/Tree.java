@@ -1,8 +1,5 @@
 package com.cefalo.school.generic;
 
-import com.cefalo.school.calculator.EmployeeInfo;
-import com.cefalo.school.composite.Employee;
-
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -14,7 +11,13 @@ import java.util.function.Function;
  */
 public interface Tree<T> {
     T createNode(T node);
-    void forEach(T node, Consumer<T> action);
 
     void makeChild(T parent, T child);
+
+    void forEach(T node, Consumer<T> action);
+
+    <U> U fold(T node,
+               U initialValue,
+               Function<T, U> extractor,
+               BiFunction<U, U, U> combiner);
 }

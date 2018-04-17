@@ -13,7 +13,7 @@ public class TestTree {
 
         EmployeeInfo cto = tree.createNode(new EmployeeInfoImpl(1, "john the cto", Role.CTO, 100000, goodScore));
 
-        EmployeeInfo pmJane = tree.createNode(new EmployeeInfoImpl(2, "jane the pm", Role.PROJECTMANAGER, 80000, goodScore));
+        EmployeeInfo pmJane = tree.createNode(new EmployeeInfoImpl(2, "jane the pm", Role.PROJECTMANAGER, 90000, goodScore));
         EmployeeInfo tlTim = tree.createNode(new EmployeeInfoImpl(4, "tim the tl", Role.TEAMLEAD, 70000, badScore));
         EmployeeInfo devDon = tree.createNode(new EmployeeInfoImpl(7, "don the dev", Role.DEVELOPER, 30000, goodScore));
         EmployeeInfo devDime = tree.createNode(new EmployeeInfoImpl(8, "dime the dev", Role.DEVELOPER, 40000, goodScore));
@@ -41,7 +41,16 @@ public class TestTree {
         tree.makeChild(cto, pmJane);
         tree.makeChild(cto, pmJim);
 
-        tree.forEach(cto, System.out::println);
+        // Print the whole tree using forEach
+//        tree.forEach(cto, System.out::println);
+
+        // Find the sum of everyones salary using fold
+        Double result = tree.fold(pmJane,0.0, e -> e.getSalary(), (a, b) -> a + b);
+        Double result2 = tree.fold(pmJim,0.0, e -> e.getSalary(), (a, b) -> a + b);
+        Double result3 = tree.fold(cto,0.0, e -> e.getSalary(), (a, b) -> a + b);
+        System.out.println("result = " + result);
+        System.out.println("result2 = " + result2);
+        System.out.println("result3 = " + result3);
 
         System.out.println("END");
     }
