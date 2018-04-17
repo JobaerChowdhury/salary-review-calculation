@@ -14,6 +14,8 @@ public interface Tree<T> {
 
     void makeChild(T parent, T child);
 
+    void removeChild(T parent, T child);
+
     void forEach(T node, Consumer<T> action);
 
     <U> U fold(T node,

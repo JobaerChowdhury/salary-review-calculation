@@ -2,9 +2,10 @@ package com.cefalo.school.common;
 
 import com.cefalo.school.calculator.Role;
 import com.cefalo.school.calculator.Score;
-import com.cefalo.school.common.EmployeeInfo;
 
 /**
+ * Basic data class.
+ * <p>
  * Created by jobaer on Apr-17-2018.
  */
 public class EmployeeInfoImpl implements EmployeeInfo {
@@ -48,7 +49,7 @@ public class EmployeeInfoImpl implements EmployeeInfo {
 
     @Override
     public String toString() {
-        return "EmplyeeInfo{" +
+        return "EmployeeInfo{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", role=" + role +

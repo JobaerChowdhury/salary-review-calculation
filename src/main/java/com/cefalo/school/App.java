@@ -4,6 +4,7 @@ import com.cefalo.school.calculator.*;
 import com.cefalo.school.common.EmployeeInfo;
 import com.cefalo.school.common.ReviewSystem;
 import com.cefalo.school.composite.CefaloReviewSystem;
+import com.cefalo.school.functional.GenericReviewSystem;
 
 public class App {
 
@@ -15,7 +16,9 @@ public class App {
         Score goodScore = new Score(8, 5, 9, 8, 9);
         Score badScore = new Score(5, 5, 5, 5, 6);
 
+//        ReviewSystem reviewSystem = new GenericReviewSystem();
         ReviewSystem reviewSystem = new CefaloReviewSystem();
+        System.out.println(reviewSystem);
         EmployeeInfo cto = reviewSystem.create(1, "john the cto", Role.CTO, 100000, goodScore);
 
         EmployeeInfo pmJane = reviewSystem.create(2, "jane the pm", Role.PROJECTMANAGER, 80000, goodScore);

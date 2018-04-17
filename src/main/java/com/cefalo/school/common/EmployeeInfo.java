@@ -4,11 +4,11 @@ import com.cefalo.school.calculator.Role;
 import com.cefalo.school.calculator.Score;
 
 public interface EmployeeInfo extends Identity {
-    public String getName();
+    String getName();
 
-    public double getSalary();
+    double getSalary();
 
-    public Role getRole();
+    Role getRole();
 
-    public Score getScore();
+    Score getScore();
 }

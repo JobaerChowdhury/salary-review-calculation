@@ -51,7 +51,7 @@ public abstract class AbstractEmployee implements Employee {
 
     @Override
     public String toString() {
-        return "Emplyee{" +
+        return "EmployeeInfo{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", role=" + role +

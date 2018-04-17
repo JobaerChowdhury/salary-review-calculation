@@ -68,4 +68,13 @@ public class CompositeTree<T extends Identity> implements Tree<T> {
             parentNode.addChild(childNode);
         }
     }
+
+    @Override
+    public void removeChild(T parent, T child) {
+        if (storage.containsKey(parent.getId()) && storage.containsKey(child.getId())) {
+            Node<T> parentNode = storage.get(parent.getId());
+            Node<T> childNode = storage.get(child.getId());
+            parentNode.removeChild(childNode);
+        }
+    }
 }
