@@ -29,7 +29,7 @@ public class GenericReviewSystem implements ReviewSystem {
 
     @Override
     public void removeSubordinate(EmployeeInfo parent, EmployeeInfo child) {
-        tree.removeChild(parent, child);
+        tree.removeOnlyChild(parent, child);
     }
 
     @Override

@@ -58,8 +58,15 @@ public class App {
         double devGroupSalary = reviewSystem.calculateGroupSalary(devDina);
         System.out.printf("devGroupSalary = %.2f\n", devGroupSalary);
 
+        double jimSalry = reviewSystem.calculateSalary(pmJim);
+        System.out.printf("jimSalry = %.2f\n", jimSalry);
+
         double groupSalary = reviewSystem.calculateGroupSalary(cto);
         System.out.printf("groupSalary = %.2f\n", groupSalary);
+
+        reviewSystem.removeSubordinate(cto, pmJim);
+        double groupSalary2 = reviewSystem.calculateGroupSalary(cto);
+        System.out.printf("groupSalary2 = %.2f\n", groupSalary2);
 
         double withFlatIncrease = reviewSystem.flatRaise(0.05, cto);
         System.out.printf("withFlatIncrease = %.2f\n", withFlatIncrease);
