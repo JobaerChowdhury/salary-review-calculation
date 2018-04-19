@@ -1,6 +1,5 @@
 package com.cefalo.school.common;
 
-import com.cefalo.school.calculator.Role;
 import com.cefalo.school.calculator.Score;
 
 public interface ReviewSystem {

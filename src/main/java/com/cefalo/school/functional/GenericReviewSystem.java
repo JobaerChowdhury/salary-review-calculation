@@ -1,7 +1,7 @@
 package com.cefalo.school.functional;
 
 import com.cefalo.school.calculator.ReviewCalculator;
-import com.cefalo.school.calculator.Role;
+import com.cefalo.school.common.Role;
 import com.cefalo.school.calculator.Score;
 import com.cefalo.school.common.EmployeeInfo;
 import com.cefalo.school.common.EmployeeInfoImpl;

@@ -3,8 +3,8 @@ package com.cefalo.school;
 import com.cefalo.school.calculator.*;
 import com.cefalo.school.common.EmployeeInfo;
 import com.cefalo.school.common.ReviewSystem;
+import com.cefalo.school.common.Role;
 import com.cefalo.school.composite.CefaloReviewSystem;
-import com.cefalo.school.functional.GenericReviewSystem;
 
 public class App {
 

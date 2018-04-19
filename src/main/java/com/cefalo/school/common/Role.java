@@ -1,4 +1,4 @@
-package com.cefalo.school.calculator;
+package com.cefalo.school.common;
 
 import com.cefalo.school.calculator.Impact;
 
@@ -10,7 +10,7 @@ public enum Role {
 
     private Impact impact;
 
-    private Role(Impact impact) {
+    Role(Impact impact) {
         this.impact = impact;
     }
 
