@@ -15,7 +15,7 @@ public class CefaloReviewSystem implements ReviewSystem {
     public EmployeeInfo create(int id, String name, Role role, double salary, Score score) {
         Employee emp;
         if (Role.DEVELOPER.equals(role)) {
-            emp = new Developer(id, name, role, salary, score);
+            emp = new EmployeeImpl(id, name, role, salary, score);
         } else {
             emp = new CompositeEmployeeHof(id, name, role, salary, score);
         }

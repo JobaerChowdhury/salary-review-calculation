@@ -4,7 +4,7 @@ import com.cefalo.school.calculator.ReviewCalculator;
 import com.cefalo.school.calculator.Role;
 import com.cefalo.school.calculator.Score;
 
-public abstract class AbstractEmployee implements Employee {
+public class EmployeeImpl implements Employee {
 
     private int id;
     private String name;
@@ -12,7 +12,7 @@ public abstract class AbstractEmployee implements Employee {
     private Role role;
     private Score score;
 
-    AbstractEmployee(int id, String name, Role role, double salary, Score score) {
+    EmployeeImpl(int id, String name, Role role, double salary, Score score) {
         this.id = id;
         this.name = name;
         this.salary = salary;
@@ -24,6 +24,11 @@ public abstract class AbstractEmployee implements Employee {
     public double calculateSalary() {
         ReviewCalculator reviewCalculator = new ReviewCalculator(salary, score, role.getImpact());
         return reviewCalculator.calculate();
+    }
+
+    @Override
+    public double calculateGroupSalary() {
+        return calculateSalary();
     }
 
     public String getName() {
@@ -47,6 +52,20 @@ public abstract class AbstractEmployee implements Employee {
     @Override
     public Score getScore() {
         return score;
+    }
+
+    public void add(Employee employee) {
+        //this is leaf node so this method is not applicable to this class.
+    }
+
+    public Employee getChild(int i) {
+        //this is leaf node so this method is not applicable to this class.
+        return null;
+    }
+
+
+    public void remove(Employee employee) {
+        //this is leaf node so this method is not applicable to this class.
     }
 
     @Override

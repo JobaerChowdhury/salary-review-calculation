@@ -6,7 +6,7 @@ import com.cefalo.school.calculator.Score;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompositeEmployee extends AbstractEmployee {
+public class CompositeEmployee extends EmployeeImpl {
     List<Employee> employees = new ArrayList<Employee>();
 
     public CompositeEmployee(int id, String name, Role role, double salary, Score score) {

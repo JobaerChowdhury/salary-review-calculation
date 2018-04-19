@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-public class CompositeEmployeeHof extends AbstractEmployee {
+public class CompositeEmployeeHof extends EmployeeImpl {
     private List<Employee> employees = new ArrayList<>();
 
     public CompositeEmployeeHof(int id, String name, Role role, double salary, Score score) {
