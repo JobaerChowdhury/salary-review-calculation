@@ -57,7 +57,7 @@ public class GenericReviewSystem implements ReviewSystem {
     }
 
     private static Double newSalary(EmployeeInfo emp) {
-        ReviewCalculator reviewCalculator = new ReviewCalculator(emp.getSalary(), emp.getScore(), emp.getRole().getImpact());
+        ReviewCalculator reviewCalculator = new ReviewCalculator(emp.getSalary(), emp.getScore(), emp.getRole().impact);
         return reviewCalculator.calculate();
     }
 

@@ -8,13 +8,9 @@ public enum Role {
     PROJECTMANAGER(new Impact(0.2, 0.1, 0.3, 0.4, 0.1)),
     CTO(new Impact(0.1, 0.3, 0.3, 0.3, 0.0));
 
-    private Impact impact;
+    public Impact impact;
 
     Role(Impact impact) {
         this.impact = impact;
-    }
-
-    public Impact getImpact() {
-        return this.impact;
     }
 }

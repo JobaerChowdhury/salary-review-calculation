@@ -22,7 +22,7 @@ public class EmployeeImpl implements Employee {
 
     @Override
     public double calculateSalary() {
-        ReviewCalculator reviewCalculator = new ReviewCalculator(salary, score, role.getImpact());
+        ReviewCalculator reviewCalculator = new ReviewCalculator(salary, score, role.impact);
         return reviewCalculator.calculate();
     }
 
